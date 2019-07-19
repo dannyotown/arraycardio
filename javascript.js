@@ -16,13 +16,20 @@ namesofinventors = inventors.map( (x) =>{return x.first+' '+x.last});
 //3. Sort the inventors by birthdate, oldest to youngest
 birthdays = inventors.sort( (x,b) =>{return x.year > b.year});
 //4. How many years did all the inventors live
-
 yearslived = inventors.reduce((x,y)=>{return x + (y.passed - y.year)},0) 
+//5. sort the inventors by years lived 
+oldest = inventors.sort((a,b)=>{
+    const lastguy = a.passed - a.year;
+    const nextguy = b.passed - b.passed;
+    return lastguy > nextguy ? -1:1;
+})
 console.log('1. Filter the list of inventors who were born in 1900s');
 console.log(JSON.stringify(younginventors));
 console.log('2. Give us an array of the inventory of first and last names');
 console.log(namesofinventors);
-console.log('2. Sort the inventors by birthdate, oldest to youngest');
+console.log('3. Sort the inventors by birthdate, oldest to youngest');
 console.log(JSON.stringify(birthdays));
-console.log('2. Sort the inventors by birthdate, oldest to youngest');
+console.log('4. Sort the inventors by birthdate, oldest to youngest');
 console.log(yearslived);
+console.log('5. sort the inventors by years lived ')
+console.log(JSON.stringify(oldest));
