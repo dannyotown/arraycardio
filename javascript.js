@@ -23,13 +23,31 @@ oldest = inventors.sort((a,b)=>{
     const nextguy = b.passed - b.passed;
     return lastguy > nextguy ? -1:1;
 })
-console.log('1. Filter the list of inventors who were born in 1900s');
-console.log(JSON.stringify(younginventors));
-console.log('2. Give us an array of the inventory of first and last names');
-console.log(namesofinventors);
-console.log('3. Sort the inventors by birthdate, oldest to youngest');
-console.log(JSON.stringify(birthdays));
-console.log('4. Sort the inventors by birthdate, oldest to youngest');
-console.log(yearslived);
-console.log('5. sort the inventors by years lived ')
-console.log(JSON.stringify(oldest));
+// console.log('1. Filter the list of inventors who were born in 1900s');
+// console.log(JSON.stringify(younginventors));
+// console.log('2. Give us an array of the inventory of first and last names');
+// console.log(namesofinventors);
+// console.log('3. Sort the inventors by birthdate, oldest to youngest');
+// console.log(JSON.stringify(birthdays));
+// console.log('4. Sort the inventors by birthdate, oldest to youngest');
+// console.log(yearslived);
+// console.log('5. sort the inventors by years lived ')
+// console.log(JSON.stringify(oldest));
+
+const J = "aA";
+const S = "aAAbbbb";
+
+function newJewels(J, S) {
+    let splitStones = S.split();
+    let splitJewels = J.split();
+    let counter = 0;
+    for(i = 0; i < splitStones.length; i++){
+        if (splitJewels.includes(splitStones[i])){
+            counter += 1;
+            console.log('reached');
+        }
+    }
+    return counter;
+};
+
+console.log(newJewels());
